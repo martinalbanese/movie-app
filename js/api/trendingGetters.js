@@ -13,7 +13,7 @@ const options = {
 };
 
 export const getTrending = async (baseUrl) => {
-    const response = await fetch(baseUrl + "all/day?language=en-US", options);
+    const response = await fetch(baseUrl + "trending/all/day?language=en-US", options);
 
     const data = await response.json();
 
@@ -24,14 +24,43 @@ export const getTrending = async (baseUrl) => {
  * chiamata che prende il trending generale e ci restituisce solo i film
  * getTrendingMovies
  * @param baseUrl
- * @returns trending movies
+ * @returns film di tendenza
 */
 
 export const getTrendingMovies = async (baseUrl) => {
-    const response = await fetch(baseUrl + "movie/day?language=en-US", options);
+    const response = await fetch(baseUrl + "trending/movie/day?language=en-US", options);
 
     const data = await response.json();
 
     return data;
 }
 
+/**
+ * chiamata che prende il trending generale e ci restituisce solo le serie tv
+ * getTrendingTvSeries
+ * @param baseUrl
+ * @returns serie tv di tendenza
+ */
+
+export const getTrendingTvSeries = async (baseUrl) => {
+    const response = await fetch(baseUrl + "tv/day?language=en-US", options);
+
+    const data = await response.json();
+
+    return data;
+}
+
+/**
+ * chiamata che permette di fare ricerche per nome di persona
+ * getSearchedPerson
+ * 
+ * @return film o serie tv che includono quella persona
+ */
+
+export const getSearchedPerson = async (baseUrl, person) => {
+    const response = await fetch(baseUrl + `search/person?query=${person}`, options);
+
+    const data = await response.json();
+
+    return data;
+}
