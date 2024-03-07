@@ -1,48 +1,43 @@
 export const printMedia = async (element) => {
    switch(element.media_type) {
         case 'movie':
-            console.log(`\n\n
-            Media:\n
-            ${element.poster_path}\n 
-            Id: ${element.id}\n
-            Title: ${element.title}\n
-            Release date: ${element.release_date}\n
-            Vote average: ${element.vote_average}\n
-            Media type: ${element.media_type}`)
+            console.log(
+            `ID:${media.id},\n` +
+            `Poster Path:${media.poster_path},\n` +
+            `Title:${media.title},\n` +
+            `Vote Average:${media.vote_average},\n` +
+            `Media Type:${media.media_type},\n` +
+            `Release Date:${media.release_date}\n`)
         break;
   
         case 'tv':
-        console.log(`\n\n
-            Media:\n
-            ${element.poster_path}\n 
-            Id: ${element.id}\n
-            Title: ${element.title}\n
-            Release date: ${element.release_date}\n
-            Vote average: ${element.vote_average}\n
-            Media type: ${element.media_type}`)
+            console.log(
+                `ID:${media.id},\n` +
+                `Poster Path:${media.poster_path},\n` +
+                `Title:${media.title},\n` +
+                `Vote Average:${media.vote_average},\n` +
+                `Media Type:${media.media_type},\n` +
+                `Release Date:${media.release_date}\n`)
         break;
     
         case 'person': 
-        console.log(`\n\n
-            Media:\n
-            ${element.poster_path}\n 
-            Id: ${element.id}\n
-            Title: ${element.title}\n
-            Release date: ${element.release_date}\n
-            Vote average: ${element.vote_average}\n
-            Media type: ${element.media_type}`)   
+            console.log(
+                `ID:${media.id},\n` +
+                `Poster Path:${media.poster_path},\n` +
+                `Title:${media.title},\n` +
+                `Vote Average:${media.vote_average},\n` +
+                `Media Type:${media.media_type},\n` +
+                `Release Date:${media.release_date}\n`)
         break;
 
         default:
-            case 'movie':
-                console.log(`\n\n
-                Media:\n
-                ${element.poster_path}\n 
-                Id: ${element.id}\n
-                Title: ${element.title}\n
-                Release date: ${element.release_date}\n
-                Vote average: ${element.vote_average}\n
-                Media type: ${element.media_type}`)
+            console.log(
+                `ID:${media.id},\n` +
+                `Poster Path:${media.poster_path},\n` +
+                `Title:${media.title},\n` +
+                `Vote Average:${media.vote_average},\n` +
+                `Media Type:${media.media_type},\n` +
+                `Release Date:${media.release_date}\n`)
             break;
   } 
 }
