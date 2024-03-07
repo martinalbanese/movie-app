@@ -9,5 +9,8 @@
     "start": "node ./js/index.js"
   },
   "author": "Martina Albanese",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5"
+  }
 }

@@ -45,8 +45,8 @@ export const getTrendingTvSeries = async () => {
  * @return film o serie tv che includono quella persona
  */
 
-export const getSearchedPerson = async (person) => {
-    const response = await fetch(BASE_URL + `search/person?query=${person}`, OPTIONS);
+export const getSearchedPerson = async (personToSearch) => {
+    const response = await fetch(BASE_URL + `search/person?query=${personToSearch}`, OPTIONS);
 
     const data = await response.json();
 
