@@ -1,4 +1,6 @@
-import { getSearchedPerson, getTrending, getTrendingMovies, getTrendingTvSeries } from "./api/trendingGetters.js";
+import { printMedia } from "./api/printMedia.js";
+import { getTrending } from "./api/trendingGetters.js";
+//import { getSearchedPerson, getTrending, getTrendingMovies, getTrendingTvSeries } from "./api/trendingGetters.js";
 
 
 
@@ -19,20 +21,15 @@ import { getSearchedPerson, getTrending, getTrendingMovies, getTrendingTvSeries 
 const trendingData = getTrending().then((data) => {
     const trending = data.results
     trending.forEach((element) => {
-        console.log(`\n\n
-        Media:\n
-        ${element.poster_path}\n 
-        Id: ${element.id}\n
-        Title: ${element.title}\n
-        Release date: ${element.release_date}\n
-        Vote average: ${element.vote_average}\n
-        Media type: ${element.media_type}`)
+        printMedia(element);
     })
 });
 
-getTrendingMovies();
 
-getTrendingTvSeries();
+/* const trendingMovie = getTrendingMovies();
 
-getSearchedPerson("Clooney");
+const tendingTvSeries = getTrendingTvSeries();
 
+const searchedPerson = getSearchedPerson("Clooney");
+
+ */
