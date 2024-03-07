@@ -1,4 +1,4 @@
-import { BASE_URL, OPTIONS } from "./api/config.js";
+import { BASE_URL, OPTIONS } from "./config.js";
 
 export const getTrending = async () => {
     const response = await fetch(BASE_URL + "trending/all/day?language=en-US", OPTIONS);
