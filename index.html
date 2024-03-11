@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie App</title>
+</head>
+<body>
+    <h1 id="header">Movie Ap</h1>
+    <ul id="trending-movies-list">
+
+    </ul>
+
+
+<script type="module">
+    import { fixTitle, addParagraph } from './js/index.js'
+    import { getTrendingMovies } from './js/index.js'
+    import { printMedia } from './js/index.js'
+    import { trendingData } from './js/index.js'
+    console.log("prova");
+    fixTitle();
+    addParagraph();
+    /* const trendingMovies = getTrendingMovies().then((data) => {
+        console.log(data.results);
+    }); */
+    console.log(trendingData);
+
+
+</script>
+</body>
+</html>
