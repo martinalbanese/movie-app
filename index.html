@@ -13,18 +13,17 @@
 
 
 <script type="module">
-    import { fixTitle, addParagraph } from './js/index.js'
+    import { fixTitle } from './js/index.js'
     import { getTrendingMovies } from './js/index.js'
     import { printMedia } from './js/index.js'
-    import { trendingData } from './js/index.js'
+    import { createTrendingList } from './js/index.js'
+
     console.log("prova");
     fixTitle();
-    addParagraph();
-    /* const trendingMovies = getTrendingMovies().then((data) => {
-        console.log(data.results);
-    }); */
-    console.log(trendingData);
-
+    // addParagraph();
+    
+    const trendingMovies = await getTrendingMovies();
+    createTrendingList(trendingMovies, "trending-movies-list");
 
 </script>
 </body>
