@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie App</title>
+    <link rel="stylesheet" href="../index.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1 id="header">Movie Ap</h1>
+        <!-- Search bar -->
+        <form id="form">
+            <input
+                type="text"
+                id="search"
+                placeholder="Search"
+                class="search"
+            />
+        </form>
+    </header>
+    
+    <!-- Generale -->
+    <!-- <ul id="trending-movies-list"></ul> -->
+    <div id="movies-card"></div>
+         
+
+    
+
+
+<script type="module">
+    import { fixTitle, getTrendingMovies, /* printMedia ,*/ createCard } from './../js/index.js'
+
+    console.log("prova");
+    fixTitle();
+
+    const cards = await getTrendingMovies();
+    createCard(cards);
+
+</script>
+</body>
+</html>

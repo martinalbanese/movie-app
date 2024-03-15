@@ -1,0 +1,97 @@
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   color: #fff;
+   text-decoration: none;
+   background-color: #000;
+}
+
+body{
+   display: flex;
+   flex-direction: column;
+   flex-wrap: wrap;
+}
+
+/* Header */
+header{
+   width: 100%;
+   height: 70%;
+   background: #000;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+
+header h1{
+   margin-left: 20px;
+   margin-top: 10px;
+   color: #db3939;
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   font-size: 50px;
+   background-color: #000;
+}
+
+header a {
+   text-decoration: none;
+}
+
+header form{
+   display: flex;
+   align-items: center;
+}
+
+/* Search bar */
+#search{
+   width: 230px;
+   height: 30px;
+   border: 1px solid black;
+   outline: none;
+   border-radius: 20px;
+   padding-left: 15px;
+   flex-shrink: 0;
+   margin-right: 20px;
+   background-color: #fff;
+}
+
+/* Generale */
+movie-card {
+   width: 100%;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+
+   /* height: auto;
+   text-align: center;
+   justify-items: center;
+   padding: 10px;
+   border: 2px solid black;
+   background-color: lightslategray;
+   color: white; */
+}
+
+movie-card div {
+   width: 100px;
+   height: 100px;
+   margin: 19px 15px;
+   background-color: red;
+   border-radius: 20px;
+}
+
+img {
+   width: 100%;
+   height: 89%;
+   object-fit: cover;
+}
+
+h1 {
+   font-size: 40px;
+   font-family: 'Times New Roman', Times, serif;
+   font-weight: bold;
+   text-align: center;
+   color:#fff;
+}
+
+p  {
+   font-size: 20px;
+}

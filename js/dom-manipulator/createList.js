@@ -1,56 +1,36 @@
-/**
- * createTrendingMoviesList()
- * 
- * funzione prende in ingresso array di movies
- * per ogni movie aggiunge al dom un nuovo nodo
- * che sarà un tag <li> contente il titolo del movie 
- * 
- * @param array dei film
- * @returns 
- */
+import { IMG_PATH } from "./../api/config.js";
 
-/* export const createTrendingMoviesList = (movies) => {
-    //recupero il nodo ul con id 
-    const list = document.getElementById("trending-movies-list");
+
+export const createCard = (movies) => {
     
-    //ciclo su ogni elemento dell'array che viene preso in ingresso
-    //come parametro
+    const cardContainer = document.getElementById("movies-card");
+
     movies.results.forEach(element => {
-        //creiamo un nuovo nodo che corrisponde a un tag li        
-        const listItem = document.createElement("li");
 
-        //impostiamo il contenuto del tag li appena creato
-        //assegnando il valore del titledell'elemento corrente
-        //in questa iterazione dell'array
-        listItem.textContent = element.title;
+        const card = document.createElement("div");
 
-        /* if (index % 2 === 0) listItem.classList.add("list-group-item-secondary");
-        listItem.classList.add("list-group-item-secondary");
+        const textContainer = document.createElement("div");
 
-        //appendiamo alla pagina hrml il nuovo tag creato sul tag ul dell'html
-        list.appendChild(listItem);
-    });
-} */
+        const image = document.createElement("img");
+        image.src = IMG_PATH + element.backdrop_path;
+        image.alt = `Poster ${element.title}`
 
-export const createTrendingList = (movies, ul) => {
-     //recupero il nodo ul con id 
-        const list = document.getElementById(ul)
+        const title = document.createElement("h1");
+        title.innerText = element.title;
 
-    //ciclo su ogni elemento dell'array che viene preso in ingresso
-    //come parametro
-    movies.results.forEach(element => {
-        const listItem = document.createElement("li");
-            switch(element.media_type){
-                case 'movie':
-                    listItem.textContent = element.title;
-                    break;
-                case 'tv':
-                    listItem.textContent = element.title;
-                    break;
-                case 'person':
-                    listItem.textContent = element.title;
-                    break;
-            }
-        list.appendChild(listItem);
-        });
+        const description = document.createElement("p");
+        description.innerText = element.overview; 
+
+        textContainer.appendChild(title);
+
+        textContainer.appendChild(description);
+        
+        card.appendChild(textContainer);
+
+        card.appendChild(image);
+
+        cardContainer.appendChild(card);
+        
+   })
 }
+

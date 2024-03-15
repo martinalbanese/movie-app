@@ -1,6 +1,5 @@
 import { printMedia } from "./printMedia.js";
-import { getTrending } from "./trendingGetters.js";
-//import { getSearchedPerson, getTrending, getTrendingMovies, getTrendingTvSeries } from "./api/trendingGetters.js";
+import { getSearchedPerson, getTrending, getTrendingMovies, getTrendingTvSeries } from "./trendingGetters.js";
 
 
 /**
@@ -25,10 +24,9 @@ export const trendingData = getTrending().then((data) => {
 });
 
 
-/* const trendingMovie = getTrendingMovies();
+const trendingMovie = getTrendingMovies();
 
 const tendingTvSeries = getTrendingTvSeries();
 
 const searchedPerson = getSearchedPerson("Clooney");
 
- */
