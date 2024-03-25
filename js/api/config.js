@@ -1,6 +1,6 @@
 export const BASE_URL = 'https://api.themoviedb.org/3/';
 
-export const IMG_PATH = 'https://image.tmdb.org/t/p/w500';
+export const IMG_PATH = 'https://image.tmdb.org/t/p/original';
 
 //per risolvere il problema dell'errore dotenv
 const API_KEY = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxNDViZTBjNjFiOTBiNWE4NmYwNTJiOTExZmIwMzEyMiIsInN1YiI6IjY1ZTg2YTcyYTZjMTA0MDE4N2U5ZWQ5OSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Wu94QGwPr_U9oDBocKbbc1H9F1a2L0-vwyVE52V4Wcw"

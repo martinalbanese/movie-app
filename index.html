@@ -1,30 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie App</title>
+    <title>Notflix</title>
+    <link rel="icon" href="./assets/film.svg">
+    <link rel="stylesheet" href="./index.css">
 </head>
+
 <body>
-    <h1 id="header">Movie Ap</h1>
-    <ul id="trending-movies-list">
+    <!-- Header -->
+    <div class="bg-img" id="bg-img">
+        <div class="nav">
+            <span><a href="/">
+                    <h1 id="header">Ntflix</h1>
+                </a></span>
+        </div>
+        <div id="movies-card"></div>
 
-    </ul>
+    </div>
+    <section id="movies-section">
+        <div id="movies-carousel" class="carousel"></div>
+        <div class="movies-carousel-text"></div>
+        <button id="leftMovies" class="prev">&#10094;</button>
+        <button id="rightMovies" class="next">&#10095;</button>
+    </section>
 
+    <section id="series-section">
+        <div id="series-carousel" class="carousel"></div>
+        <div class="series-carousel-text"></div>
+        <button id="leftSeries" class="prev">&#10094;</button>
+        <button id="rightSeries" class="next">&#10095;</button>
+    </section>
 
-<script type="module">
-    import { fixTitle } from './js/index.js'
-    import { getTrendingMovies } from './js/index.js'
-    import { printMedia } from './js/index.js'
-    import { createTrendingList } from './js/index.js'
+    <script type="module">
+        import { fixTitle } from './js/utils/index.js'
+        import { createCard, createMoviesCarousel, createSeriesCarousel } from './js/dom-manipulator/index.js'
+        import { getDiscoverMovies, getTrendingMovies, getTrendingTvSeries } from './js/api/index.js'
 
-    console.log("prova");
-    fixTitle();
-    // addParagraph();
-    
-    const trendingMovies = await getTrendingMovies();
-    createTrendingList(trendingMovies, "trending-movies-list");
+        async function initializePage() {
+            fixTitle();
 
-</script>
+            // Ottieni i dati per le varie sezioni e crea le diverse sezioni della pagina
+            getDiscoverMovies().then(cards => 
+                createCard(cards, "bg-img", "movies-card")
+            );
+            getTrendingMovies().then(moviesCarousel =>
+                createMoviesCarousel(moviesCarousel)
+            );
+            getTrendingTvSeries().then(seriesCarousel =>
+                createSeriesCarousel(seriesCarousel)
+            );  
+            
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initializePage();
+        });
+        
+    </script>
 </body>
+
 </html>

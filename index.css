@@ -2,96 +2,354 @@
    margin: 0;
    padding: 0;
    box-sizing: border-box;
-   color: #fff;
-   text-decoration: none;
-   background-color: #000;
-}
-
-body{
-   display: flex;
-   flex-direction: column;
-   flex-wrap: wrap;
-}
-
-/* Header */
-header{
-   width: 100%;
-   height: 70%;
-   background: #000;
-   display: flex;
-   align-items: center;
-   justify-content: space-between;
-}
-
-header h1{
-   margin-left: 20px;
-   margin-top: 10px;
-   color: #db3939;
-   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-   font-size: 50px;
-   background-color: #000;
-}
-
-header a {
+   color: white;
    text-decoration: none;
 }
 
-header form{
+body {
+   background-color: black;
+}
+
+/* Nav */
+.nav {
    display: flex;
    align-items: center;
-}
-
-/* Search bar */
-#search{
-   width: 230px;
-   height: 30px;
-   border: 1px solid black;
-   outline: none;
-   border-radius: 20px;
-   padding-left: 15px;
-   flex-shrink: 0;
-   margin-right: 20px;
-   background-color: #fff;
-}
-
-/* Generale */
-movie-card {
-   width: 100%;
-   display: flex;
-   flex-wrap: wrap;
    justify-content: center;
-
-   /* height: auto;
-   text-align: center;
-   justify-items: center;
-   padding: 10px;
-   border: 2px solid black;
-   background-color: lightslategray;
-   color: white; */
+   font-size: 18px;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   padding: 3px;
 }
 
-movie-card div {
-   width: 100px;
-   height: 100px;
-   margin: 19px 15px;
-   background-color: red;
+.nav > * {
+   cursor: pointer;
+   margin: 0 16px;
+}
+
+.nav h1 {
+   color: #db3939;
+   font-size: 50px;
+}
+
+.nav a{
+   margin: 0 10px;
+   text-decoration: none;
+   color: #efefef;
+}
+
+/* Background image */
+.bg-img {
+   position: relative;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100dvh;
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center;
+   opacity: 0.8;
+}
+
+/* Discover cards */
+#movies-card {
+   width: 45%;
+   line-height: 28px;
+   position: absolute;
+   top: 10%;
+   left: 0;
+   z-index: 1;
+   margin: 0 auto;
+   max-width: 1600px;
+   padding: 10% 50px;
+}
+
+.infoContainer {
+   line-height: 28px;
+}
+
+.movieTitle {
+   font-size: 55px;
+   margin-bottom: 20px;
+   line-height: 60px;
+   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+   font-weight: 200;
+   color: white;
+   -webkit-text-stroke: 1px black;
+}
+
+.movieInfo{
+   margin-bottom: 20px;
+   text-transform: uppercase;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.maturityNumber {
+   border: 1px solid #393838;
+   padding: 0 5px;
+   color: #393838
+}
+
+.voteAverage {
+   padding-left: 5px;
+   color: #393838
+}
+
+.language {
+   text-transform: uppercase;
+   padding-left: 10px;
+   color: #393838
+} 
+
+.movieOverview {
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 15px;
+   margin-bottom: 20px;
+   color: white;
+   text-shadow:
+       3px 3px 0 #000,
+     -1px -1px 0 #000,  
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+       1px 1px 0 #000;
+}
+
+.buttons {
+   gap: 20px;
+   align-items: center;
+   display: flex;
+}
+
+.playButton {
+   background-color: #db3939;
+   border: none;
+   padding: 15px 35px;
+   cursor: pointer;
+   font-size: 15px;
+   font-weight: bold;
+}
+
+.playButton:hover {
+   background-color: white;
+   color: #db3939;
+}
+
+.detailsButton {
+   background-color: white;
+   color: #db3939;
+   border: none;
+   padding: 15px 35px;
+   cursor: pointer;
+   font-size: 15px;
+   font-weight: bold;
+}
+
+.detailsButton:hover {
+   background-color: #db3939;
+   color: white;
+   border: transparent;
+}
+#movies-card {
+   display: flex;
+   position: relative;
+}
+
+/* Movies Carousel */
+#movies-section,
+#series-section {
+   position: relative;
+   margin-left: 20px;
+}
+
+.movieCarousel,
+.seriesCarousel {
+   width: 100%;
+   margin-top: 20px;
+   display: flex;
+   padding-bottom: 20px;
    border-radius: 20px;
 }
 
-img {
-   width: 100%;
-   height: 89%;
-   object-fit: cover;
+.movie-info-container,
+.series-info-container {
+   flex: 0 0 auto;
+   margin-right: 20px;
+   position: relative;
+   overflow: hidden;
 }
 
-h1 {
-   font-size: 40px;
-   font-family: 'Times New Roman', Times, serif;
-   font-weight: bold;
+.movie-info-container img,
+.series-info-container img {
+   border-radius: 20px;
+}
+
+.movie-info-container:hover img,
+.series-info-container:hover img {
+   opacity: 0.7;
+}
+
+/* .movie-info-container:hover,
+.series-info-container:hover {
+   border: 1px solid white;
+} */
+
+.movie-title,
+.series-title {
+   display: none;
+   position: absolute;
+   bottom: 70%;
+   left: 50%;
+   transform: translateX(-50%);
    text-align: center;
-   color:#fff;
+   color: white;
+   font-size: 18px;
+   font-weight: bold;
+   background-color: rgba(0, 0, 0, 0.7);
 }
 
-p  {
-   font-size: 20px;
+.movie-description,
+.series-description {
+   display: none;
+   position: absolute;
+   bottom: 20%;
+   left: 50%;
+   transform: translateX(-50%);
+   text-align: center;
+   color: white;
+   font-size: 15px;
+   background-color: rgba(0, 0, 0, 0.7);
+}
+
+.more-link {
+   display: none;
+   position: absolute;
+   bottom: 10%;
+   left: 50%;
+   transform: translateX(-50%);
+   text-align: center;
+   color: white;
+   font-size: 15px;
+   background-color: rgba(0, 0, 0, 0.7);
+}
+
+.more-link {
+   margin-top: 10px; 
+}
+
+#movies-carousel,
+#series-carousel {
+   margin-top: 20px; 
+   padding: 0 20px;
+   justify-content: center;
+}
+
+.movie-info-container:hover .movie-title,
+.movie-info-container:hover .movie-description,
+.movie-info-container:hover .more-link {
+   display: block; 
+}
+
+.series-info-container:hover .series-title,
+.series-info-container:hover .series-description,
+.series-info-container:hover .more-link {
+   display: block; 
+}
+
+.carousel {
+   overflow-x: hidden;
+   position: relative;
+}
+
+.carousel button {
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+   background: rgba(0, 0, 0, 0.5);
+   color: white;
+   border: none;
+   cursor: pointer;
+   padding: 10px;
+   z-index: 1;
+}
+
+.movies-carousel-text,
+.series-carousel-text {
+   text-align: left; 
+   margin: 10px 10px 0 0;
+   font-size: 25px;
+   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+   font-weight: 100; 
+}
+
+.prev,
+.next {
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+   background-color: white;
+   color: black;
+   padding: 10px; 
+   font-size: 20px; 
+   z-index: 2; 
+}
+
+.prev:hover,
+.next:hover {
+   background-color: #000;
+   color: #fff;
+}
+
+.prev {
+   left: 10px;
+}
+.next {
+   right: 10px;
+}
+
+.series-section .prev {
+   left: 10px;
+}
+
+.series-section .next {
+   right: 10px;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+   /* Aggiungi qui le regole CSS specifiche per le dimensioni da 320px a 480px */
+   .nav h1 {
+       font-size: 30px;
+   }
+   #movies-card {
+       width: 90%;
+       padding: 5% 10%;
+   }
+   .movie-title,
+   .movie-description,
+   .series-title,
+   .series-description,
+   .more-link {
+       font-size: 14px;
+   }
+}
+
+/* Dimensioni da 480px a 768px (portrait e landscape) */
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+   /* Aggiungi qui le regole CSS specifiche per le dimensioni da 480px a 768px */
+   .nav h1 {
+       font-size: 40px;
+   }
+}
+
+/* Dimensioni da 768px a 1024px (portrait e landscape) */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+   /* Aggiungi qui le regole CSS specifiche per le dimensioni da 768px a 1024px */
+   .nav h1 {
+       font-size: 45px;
+   }
+}
+
+/* Dimensioni da 1024px in su */
+@media only screen and (min-width: 1024px) {
+   /* Aggiungi qui le regole CSS specifiche per le dimensioni da 1024px in su */
+   .nav h1 {
+       font-size: 50px;
+   }
 }

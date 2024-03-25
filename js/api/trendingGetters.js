@@ -31,7 +31,15 @@ export const getTrendingMovies = async () => {
  */
 
 export const getTrendingTvSeries = async () => {
-    const response = await fetch(BASE_URL + "tv/day?language=en-US", OPTIONS);
+    const response = await fetch(BASE_URL + "trending/tv/day?language=en-US", OPTIONS);
+
+    const data = await response.json();
+
+    return data;
+}
+
+export const getDiscoverMovies = async () => {
+    const response = await fetch(BASE_URL + 'discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc', OPTIONS);
 
     const data = await response.json();
 

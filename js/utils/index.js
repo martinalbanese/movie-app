@@ -13,18 +13,4 @@ export const fixTitle = () => {
     }
 };
 
-/**funzione che al caricamento aggiunge un paragrafo con
- * il titolo di un film
- */
-
-/* export const addParagraph = () => {
-    const title = document.getElementById("header");
-    
-    const paragraph = document.createElement("p");
-
-    paragraph.innerHTML = "Indiana Jones";
-
-    title.appendChild(paragraph);
-} */
-
 
