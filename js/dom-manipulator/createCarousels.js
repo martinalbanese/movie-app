@@ -33,38 +33,23 @@ export const createMoviesCarousel = (movies) => {
         moreLink.textContent = "Vedi di più";
         moreLink.classList.add("more-link");
         
+        // Funzione che permette di mostrare o nascondere delle informazioni al click del mouse
         const showInfo = () => {
-            if(title.style.display = "block") {
+            if(title.style.display == "block") {
                 title.style.display = "none";
                 description.style.display = "none";
                 moreLink.style.display = "none";
+                img.style.opacity = "1";
             } else {
                 title.style.display = "block";
                 description.style.display = "block";
                 moreLink.style.display = "block";
+                img.style.opacity = "0.5";
             }
         }
-
-        // Evento mouseenter per mostrare le informazioni
         img.addEventListener("click", showInfo);
 
-        /* // Funzione per mostrare il titolo, la descrizione e il link "Vedi di più"
-        const showInfo = () => {
-            title.style.display = "block";
-            description.style.display = "block";
-            moreLink.style.display = "block";
-        };
-
-        // Funzione per nascondere il titolo, la descrizione e il link "Vedi di più"
-        const hideInfo = () => {
-            title.style.display = "none";
-            description.style.display = "none";
-            moreLink.style.display = "none";
-        }; */
-
-        /* // Evento mouseleave per nascondere le informazioni
-        img.addEventListener("click", hideInfo); */
-
+        //Funzioni per spostarsi a destra e a sinistra
         let position=0;
         let index=0;
         let scrollRight=document.getElementById("rightMovies");
@@ -129,19 +114,21 @@ export const createSeriesCarousel = (series) => {
         moreLink.textContent = "Vedi di più";
         moreLink.classList.add("more-link");
         
-        /* // Funzione per mostrare il titolo, la descrizione e il link "Vedi di più"
+        // Funzione che permette di mostrare o nascondere delle informazioni al click del mouse
         const showInfo = () => {
-            title.style.display = "block";
-            description.style.display = "block";
-            moreLink.style.display = "block";
-        };
-
-        // Funzione per nascondere il titolo, la descrizione e il link "Vedi di più"
-        const hideInfo = () => {
-            title.style.display = "none";
-            description.style.display = "none";
-            moreLink.style.display = "none";
-        }; */
+            if(title.style.display == "block") {
+                title.style.display = "none";
+                description.style.display = "none";
+                moreLink.style.display = "none";
+                img.style.opacity = "1";
+            } else {
+                title.style.display = "block";
+                description.style.display = "block";
+                moreLink.style.display = "block";
+                img.style.opacity = "0.5";
+            }
+        }
+        img.addEventListener("click", showInfo);
 
         //Funzioni per spostarsi a destra e a sinistra
         let position=0;
@@ -163,12 +150,6 @@ export const createSeriesCarousel = (series) => {
                 carousel.style.transform=`translateX(-${position}px)`;
             }
         })
-
-        /* // Evento mouseenter per mostrare le informazioni
-        img.addEventListener("click", showInfo);
-
-        // Evento mouseleave per nascondere le informazioni
-        img.addEventListener("click", hideInfo); */
         
         imgContainer.appendChild(img);
         imgContainer.appendChild(title);

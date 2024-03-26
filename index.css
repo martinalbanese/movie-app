@@ -59,7 +59,7 @@ body {
    z-index: 1;
    margin: 0 auto;
    max-width: 1600px;
-   padding: 10% 50px;
+   padding: 0 50px;
 }
 
 .infoContainer {
@@ -152,7 +152,7 @@ body {
    position: relative;
 }
 
-/* Movies Carousel */
+/* Movies and Series Carousel */
 #movies-section,
 #series-section {
    position: relative;
@@ -180,16 +180,6 @@ body {
 .series-info-container img {
    border-radius: 20px;
 }
-
-.movie-info-container:hover img,
-.series-info-container:hover img {
-   opacity: 0.7;
-}
-
-/* .movie-info-container:hover,
-.series-info-container:hover {
-   border: 1px solid white;
-} */
 
 .movie-title,
 .series-title {
@@ -239,18 +229,6 @@ body {
    margin-top: 20px; 
    padding: 0 20px;
    justify-content: center;
-}
-
-.movie-info-container:hover .movie-title,
-.movie-info-container:hover .movie-description,
-.movie-info-container:hover .more-link {
-   display: block; 
-}
-
-.series-info-container:hover .series-title,
-.series-info-container:hover .series-description,
-.series-info-container:hover .more-link {
-   display: block; 
 }
 
 .carousel {
@@ -313,7 +291,6 @@ body {
 }
 
 @media only screen and (min-width: 320px) and (max-width: 480px) {
-   /* Aggiungi qui le regole CSS specifiche per le dimensioni da 320px a 480px */
    .nav h1 {
        font-size: 30px;
    }
@@ -330,25 +307,19 @@ body {
    }
 }
 
-/* Dimensioni da 480px a 768px (portrait e landscape) */
 @media only screen and (min-width: 480px) and (max-width: 768px) {
-   /* Aggiungi qui le regole CSS specifiche per le dimensioni da 480px a 768px */
    .nav h1 {
        font-size: 40px;
    }
 }
 
-/* Dimensioni da 768px a 1024px (portrait e landscape) */
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
-   /* Aggiungi qui le regole CSS specifiche per le dimensioni da 768px a 1024px */
    .nav h1 {
        font-size: 45px;
    }
 }
 
-/* Dimensioni da 1024px in su */
 @media only screen and (min-width: 1024px) {
-   /* Aggiungi qui le regole CSS specifiche per le dimensioni da 1024px in su */
    .nav h1 {
        font-size: 50px;
    }

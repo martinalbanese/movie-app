@@ -1,11 +1,12 @@
 import {IMG_PATH } from './../api/config.js'
 
 export const createCard = (movies, elementBackground, elementId) => {
-    
+    // Prende elementi dall'html
     const cardContainer = document.getElementById(elementId);
 
     const backgroundImg = document.getElementById(elementBackground);
 
+    // Crea nuovi elementi da appendere agli elementi esistenti nell'html
     const infoContainer = document.createElement("div");
     infoContainer.classList.add('infoContainer');
 
@@ -55,7 +56,7 @@ export const createCard = (movies, elementBackground, elementId) => {
 
     backgroundImg.style.backgroundImage = `url(${backdropUrl})`;
 
-
+    // Appende gli elementi creati agli elementi esistenti nell'html
     buttons.appendChild(playButton);
     buttons.appendChild(detailsButton);
 
