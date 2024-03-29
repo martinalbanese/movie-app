@@ -103,7 +103,25 @@
           carousel.addEventListener('slide.bs.carousel', () => {
             resetMovieDetails();
           });
-        });  
+        }); 
+
+        window.addEventListener('DOMContentLoaded', function() {
+          const title = document.getElementById('movieTitle');
+          const button = document.getElementById('detailsButton');
+
+          // Calcola la posizione del pulsante in base all'altezza del titolo
+          const updateButtonPosition = () => {
+              const titleHeight = title.offsetHeight;
+              button.style.bottom = `-${titleHeight}px`;
+          };
+
+          // Aggiorna la posizione del pulsante quando la finestra viene ridimensionata
+          window.addEventListener('resize', updateButtonPosition);
+
+          // Inizializza la posizione del pulsante al caricamento della pagina
+          updateButtonPosition();
+        });
+
       </script>
   </body>
 </html>
