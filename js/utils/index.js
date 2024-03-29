@@ -6,10 +6,10 @@ export const fixTitle = () => {
 
     const titleContent = title.innerHTML;
 
-    if(titleContent === "NOTFLIX"){
+    if(titleContent === "N<em>o</em>TFLIX"){
         return
     } else {
-        title.innerHTML = "NOTFLIX";
+        title.innerHTML = "N<em>o</em>TFLIX";
     }
 };
 

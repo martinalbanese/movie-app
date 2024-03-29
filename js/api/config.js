@@ -1,5 +1,7 @@
 export const BASE_URL = 'https://api.themoviedb.org/3/';
 
+export const SEARCH_URL = 'https://api.themoviedb.org/3/search/movie?query='
+
 export const IMG_PATH = 'https://image.tmdb.org/t/p/original';
 
 //per risolvere il problema dell'errore dotenv

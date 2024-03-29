@@ -1,2 +1,5 @@
 export { createCard } from './createCard.js'
 export { createMoviesCarousel, createSeriesCarousel } from './createCarousels.js'
+export { createBgCarousel, createBgCarouselSeries, resetMovieDetails } from './createBgCarousel.js'
+export { createSearchCard, collectSearchResults } from './createSearchCard.js'
+export { createCustomButtons } from './createButtons.js'

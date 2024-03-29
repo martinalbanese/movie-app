@@ -7,7 +7,7 @@
 }
 
 body {
-   background-color: black;
+   background-color: #1A1D29;
 }
 
 /* Nav */
@@ -17,139 +17,228 @@ body {
    justify-content: center;
    font-size: 18px;
    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-   padding: 3px;
+   background-color: #1A1D29;
+   padding: 20px 0;
+}
+
+.navbar {
+   --bs-navbar-padding-x: 0;
+   --bs-navbar-padding-y: 0;
 }
 
 .nav > * {
    cursor: pointer;
-   margin: 0 16px;
 }
 
 .nav h1 {
-   color: #db3939;
+   color: #84A98C;
    font-size: 50px;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   font-weight: 700;
 }
 
-.nav a{
-   margin: 0 10px;
+.nav a,
+.nav:hover a {
    text-decoration: none;
-   color: #efefef;
+   color: #537970;
+   font-size: 50px;
+   font-family: Tauri;
 }
 
-/* Background image */
-.bg-img {
+.bg-body-tertiary {
+   --bs-bg-opacity: 1;
+   background-color: black !important;
+}
+
+.container-fluid {
+   margin-left: 20px;
+   margin-right: 20px;
+}
+
+.button {
+   color: white;
+   border: 2px solid white;
+}
+
+.button:hover {
+   background-color: #fff;
+   color: #000;
+}
+
+/* Discover carousel */
+.movie-details {
+   display: none; 
    position: relative;
+   top: 5px; 
+   text-align: center;
+   background-color: #0e0b14;
+   color: white;
+   padding: 20px;
+   max-width: 100%;
+   max-height: 80%;
+}
+
+.carousel-item {
+   position: top;
    top: 0;
    left: 0;
    width: 100%;
-   height: 100dvh;
+   height: 50vh;
    background-repeat: no-repeat;
    background-size: cover;
    background-position: center;
-   opacity: 0.8;
+   opacity: 0.9;
+   line-height: 28px;
+   border-radius: 10px;
 }
 
-/* Discover cards */
-#movies-card {
-   width: 45%;
-   line-height: 28px;
+.carousel-item:hover {
+   border: 3px solid white;
+}
+
+#carouselExampleAutoplaying {
+   width: 90%; 
+   margin: 0 auto; 
+   margin-bottom: 20px;
+}
+
+.carousel-content {
    position: absolute;
-   top: 10%;
+   bottom: 0;
    left: 0;
-   z-index: 1;
-   margin: 0 auto;
-   max-width: 1600px;
-   padding: 0 50px;
-}
-
-.infoContainer {
-   line-height: 28px;
+   transform: translate(0, -50%);
+   text-align: left;
 }
 
 .movieTitle {
    font-size: 55px;
-   margin-bottom: 20px;
+   margin-top: 20px;
    line-height: 60px;
    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
    font-weight: 200;
    color: white;
    -webkit-text-stroke: 1px black;
+   text-align: center;
+}
+
+.infoContainer {
+   position: absolute;
+   left: 50%;
+   bottom: 20px;
+   transform: translateX(-50%);
+   text-align: center;
 }
 
 .movieInfo{
-   margin-bottom: 20px;
+   margin: 20px 0;
+   text-align: center;
    text-transform: uppercase;
    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .maturityNumber {
-   border: 1px solid #393838;
+   border: 1px solid white;
    padding: 0 5px;
-   color: #393838
+   background-color: #537970;
+   opacity: 0.7;
+   color: white;
 }
 
 .voteAverage {
    padding-left: 5px;
-   color: #393838
+   background-color: #537970;
+   opacity: 0.7;
+   color: white;
 }
 
 .language {
    text-transform: uppercase;
    padding-left: 10px;
-   color: #393838
+   background-color: #537970;
+   opacity: 0.7;
+   color: white;
 } 
 
 .movieOverview {
    font-family: Arial, Helvetica, sans-serif;
    font-size: 15px;
    margin-bottom: 20px;
+   width: 45%;
    color: white;
-   text-shadow:
-       3px 3px 0 #000,
-     -1px -1px 0 #000,  
-      1px -1px 0 #000,
-      -1px 1px 0 #000,
-       1px 1px 0 #000;
 }
 
-.buttons {
+.button-container {
+   display: flex; 
+   justify-content: center; 
    gap: 20px;
-   align-items: center;
-   display: flex;
+}
+
+.playButton,
+.detailsButton {
+  padding: 15px 35px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  margin: 0 10px !important;
+}
+
+.playButton:hover,
+.detailsButton:hover {
+  padding: 15px 35px !important;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
 }
 
 .playButton {
-   background-color: #db3939;
-   border: none;
-   padding: 15px 35px;
-   cursor: pointer;
-   font-size: 15px;
-   font-weight: bold;
+   background-color: #344D50 !important;
+   color: white !important;
 }
 
 .playButton:hover {
-   background-color: white;
-   color: #db3939;
+   background-color: white !important;
+   color: #537970 !important;
 }
 
 .detailsButton {
-   background-color: white;
-   color: #db3939;
-   border: none;
-   padding: 15px 35px;
-   cursor: pointer;
-   font-size: 15px;
-   font-weight: bold;
+   background-color: #344D50 !important;
+   color: white !important;
 }
 
 .detailsButton:hover {
-   background-color: #db3939;
-   color: white;
-   border: transparent;
+   background-color: white !important;
+   color: #537970 !important;
+   padding: 15px 35px !important;
 }
-#movies-card {
+
+/* Buttons section */
+.custom-button {
+   width: 300px !important;
+   height: 100px !important;
+   margin: 20px 20px 20px 0;
+   border: none;
+   border-radius: 20px; 
+   background-color: #344D50; 
+   color: white;
+   font-weight: bold;
+   cursor: pointer;
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+}
+
+.custom-button:hover {
+   background-color: #537970; 
+}
+
+.custom-icon {
+   font-size: 24px;
+}
+
+.button-section {
    display: flex;
-   position: relative;
+   justify-content: center;
+   margin-top: 20px;
 }
 
 /* Movies and Series Carousel */
@@ -174,11 +263,16 @@ body {
    margin-right: 20px;
    position: relative;
    overflow: hidden;
+   border-radius: 10px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+   transition: transform 0.3s, box-shadow 0.3s
 }
 
-.movie-info-container img,
-.series-info-container img {
-   border-radius: 20px;
+.movie-info-container:hover,
+.series-info-container:hover {
+   transform: scale(1.05); 
+   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6), 0 0 0 4px white; 
+   border: 1.5px solid white;
 }
 
 .movie-title,
@@ -240,7 +334,7 @@ body {
    position: absolute;
    top: 50%;
    transform: translateY(-50%);
-   background: rgba(0, 0, 0, 0.5);
+   background: transparent;
    color: white;
    border: none;
    cursor: pointer;
@@ -251,7 +345,7 @@ body {
 .movies-carousel-text,
 .series-carousel-text {
    text-align: left; 
-   margin: 10px 10px 0 0;
+   margin: 50px 0 0 10px;
    font-size: 25px;
    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
    font-weight: 100; 
@@ -262,8 +356,8 @@ body {
    position: absolute;
    top: 50%;
    transform: translateY(-50%);
-   background-color: white;
-   color: black;
+   background-color: #344D50;
+   color: white;
    padding: 10px; 
    font-size: 20px; 
    z-index: 2; 
@@ -271,7 +365,7 @@ body {
 
 .prev:hover,
 .next:hover {
-   background-color: #000;
+   background-color: #537970;
    color: #fff;
 }
 
@@ -290,6 +384,122 @@ body {
    right: 10px;
 }
 
+/* Search bar */
+.searchForm {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-top: 20px;
+   margin-bottom: 50px;
+}
+
+.searchBar {
+   height: 30px;
+   width: 60%;
+   margin-right: 0;
+   border-radius: 20px 0 0 20px;
+   border: 1px solid black;
+   font-size: 18px;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   font-weight: 400;
+   color: #000;
+   padding-left: 10px;
+}
+
+#btnSearch {
+   height: 28px;
+   width: 100px;
+   margin-left: 0; 
+   font-size: 18px;
+   font-weight: 400;
+   border-radius: 0 20px 20px 0;
+   border: 1px solid #344D50;
+   background-color: #344D50;
+   color:#fff;
+   display: flex; 
+   justify-content: center; 
+   align-items: center; 
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#btnSearch:hover {
+   background-color: #537970;
+   color: #fff;
+   font-size: 15px;
+   font-weight: 400;
+}
+
+#searchCards{
+   justify-content: center;
+   margin-bottom: 20px;
+}
+
+.card {
+   height: 500px !important;
+   margin-top: 50px; 
+   margin-left: 30px;
+   background-color: #000;
+   border: 0.2rem solid #fff;
+   border-radius: 2rem;
+   padding: 0.4em;
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+}
+
+.card-img-container {
+   height: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   overflow: hidden;
+}
+
+.card-img-container img {
+   max-height: 100%;
+   width: 100%;
+   object-fit: fill;
+}
+
+.card-img-top {
+   border-radius: 2rem;
+}
+
+.card-title {
+   color: white;
+   font-size: 20px;
+   margin-bottom: 10px;
+}
+
+.card-text {
+   color: white;
+   font-size: 16px;
+}
+
+/* Footer */
+footer {
+   background-color: #0e0b14; 
+   color: white;
+   padding: 20px;
+   text-align: center;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+footer a {
+   color: white;
+   text-decoration: none;
+   margin: 0 10px;
+   font-size: 14px;
+}
+
+footer h2 {
+   font-size: 20px; 
+   margin-bottom: 20px;
+}
+
+.copyrightSection {
+   margin-top: 20px ;
+   font-size: 10px;
+}
+
 @media only screen and (min-width: 320px) and (max-width: 480px) {
    .nav h1 {
        font-size: 30px;
@@ -305,12 +515,24 @@ body {
    .more-link {
        font-size: 14px;
    }
+   .custom-button {
+      width: calc(100% - 40px) !important;
+      margin: 10px 20px !important;
+      display: block; 
+  }
+
 }
 
 @media only screen and (min-width: 480px) and (max-width: 768px) {
    .nav h1 {
        font-size: 40px;
    }
+
+   .custom-button {
+      width: calc(100% - 40px) !important;
+      margin: 10px 20px !important;
+      display: block; 
+  }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1024px) {

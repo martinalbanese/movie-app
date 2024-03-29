@@ -1,10 +1,9 @@
-export const createMoviesCarousel = (movies) => {
-    const carouselContainer = document.querySelector("#movies-section");
+import { IMG_PATH } from './../api/index.js'
+
+export const createMoviesCarousel = (movies, elementId, rightArrow, leftArrow) => {
+    const carouselContainer = document.getElementById(elementId);
     const carousel = document.createElement("div");
     carousel.classList = "movieCarousel";
-
-    const carouselText = document.querySelector(".movies-carousel-text");
-    carouselText.textContent = "Movies we think you'll like";
 
     const shuffledResults = movies.results.sort(() => 0.5 - Math.random());
     
@@ -13,7 +12,7 @@ export const createMoviesCarousel = (movies) => {
         imgContainer.classList.add("movie-info-container");
         
         const img = document.createElement("img");
-        img.src = 'https://image.tmdb.org/t/p/w500' + movie.backdrop_path;
+        img.src = IMG_PATH + movie.backdrop_path;
         img.alt = "Movie Poster";
         img.style.objectFit = "cover";
         img.width = 330;
@@ -25,7 +24,7 @@ export const createMoviesCarousel = (movies) => {
         title.classList.add("movie-title");
     
         const description = document.createElement("p");
-        description.textContent = movie.overview.substring(0, 100) + '...'; 
+        description.textContent = movie.overview.substring(0, 50) + '...'; 
         description.classList.add("movie-description");
     
         const moreLink = document.createElement("a");
@@ -52,7 +51,7 @@ export const createMoviesCarousel = (movies) => {
         //Funzioni per spostarsi a destra e a sinistra
         let position=0;
         let index=0;
-        let scrollRight=document.getElementById("rightMovies");
+        let scrollRight=document.getElementById(rightArrow);
         scrollRight.addEventListener("click",()=>{
             if(index<17) {
             index++;
@@ -61,7 +60,7 @@ export const createMoviesCarousel = (movies) => {
             }
         })
 
-        let scrollLeft=document.getElementById("leftMovies");
+        let scrollLeft=document.getElementById(leftArrow);
         scrollLeft.addEventListener("click",()=>{
             if(index>=0){
                 index--;
@@ -80,13 +79,10 @@ export const createMoviesCarousel = (movies) => {
     carouselContainer.appendChild(carousel);
 }
 
-export const createSeriesCarousel = (series) => {
-    const carouselContainer = document.querySelector("#series-section");
+export const createSeriesCarousel = (series, elementId, rightArrow, leftArrow) => {
+    const carouselContainer = document.getElementById(elementId);
     const carousel = document.createElement("div");
     carousel.classList = "seriesCarousel";
-
-    const carouselText = document.querySelector(".series-carousel-text");
-    carouselText.textContent = "Binge-Worthy Tv Series";
 
     const shuffledResults = series.results.sort(() => 0.5 - Math.random());
     
@@ -95,7 +91,7 @@ export const createSeriesCarousel = (series) => {
         imgContainer.classList.add("series-info-container");
         
         const img = document.createElement("img");
-        img.src = 'https://image.tmdb.org/t/p/w500' + serie.backdrop_path;
+        img.src = IMG_PATH + serie.backdrop_path;
         img.alt = "Movie Poster";
         img.style.objectFit = "cover";
         img.width = 330;
@@ -106,7 +102,7 @@ export const createSeriesCarousel = (series) => {
         title.classList.add("series-title");
     
         const description = document.createElement("p");
-        description.textContent = serie.overview.substring(0, 100) + '...'; 
+        description.textContent = serie.overview.substring(0, 50) + '...'; 
         description.classList.add("series-description");
     
         const moreLink = document.createElement("a");
@@ -133,7 +129,7 @@ export const createSeriesCarousel = (series) => {
         //Funzioni per spostarsi a destra e a sinistra
         let position=0;
         let index=0;
-        let scrollRight=document.getElementById("rightSeries");
+        let scrollRight=document.getElementById(rightArrow);
         scrollRight.addEventListener("click",()=>{
             if(index<17){
             index++;
@@ -142,7 +138,7 @@ export const createSeriesCarousel = (series) => {
             }
         })
 
-        let scrollLeft=document.getElementById("leftSeries");
+        let scrollLeft=document.getElementById(leftArrow);
         scrollLeft.addEventListener("click",()=>{
             if(index>=0){
                 index--;

@@ -1,3 +1,4 @@
-export { getTrendingMovies, getDiscoverMovies, getTrendingTvSeries } from './trendingGetters.js';
+export { getTrendingMovies, getDiscoverMovies } from './trendingGetters.js';
+export { getTrendingTvSeries, getDiscoverTvSeries } from './seriesTrendingGetters.js';
 export { IMG_PATH } from './config.js';
-export { printMedia } from './printMedia.js'
+export { handleSearch } from './handleSearch.js'

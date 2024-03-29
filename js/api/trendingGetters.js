@@ -1,4 +1,4 @@
-import { BASE_URL, OPTIONS } from "./config.js";
+import { BASE_URL, OPTIONS, SEARCH_URL } from "./config.js";
 
 export const getTrending = async () => {
     const response = await fetch(BASE_URL + "trending/all/day?language=en-US", OPTIONS);
@@ -23,21 +23,6 @@ export const getTrendingMovies = async () => {
     return data;
 }
 
-/**
- * chiamata che prende il trending generale e ci restituisce solo le serie tv
- * getTrendingTvSeries
- * @param baseUrl
- * @returns serie tv di tendenza
- */
-
-export const getTrendingTvSeries = async () => {
-    const response = await fetch(BASE_URL + "trending/tv/day?language=en-US", OPTIONS);
-
-    const data = await response.json();
-
-    return data;
-}
-
 export const getDiscoverMovies = async () => {
     const response = await fetch(BASE_URL + 'discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc', OPTIONS);
 
@@ -47,14 +32,18 @@ export const getDiscoverMovies = async () => {
 }
 
 /**
- * chiamata che permette di fare ricerche per nome di persona
- * getSearchedPerson
+ * getSearchMovies
  * 
- * @return film o serie tv che includono quella persona
+ * @description: funzione che riceve come parametro una stringa che corrisponde a una parola chiave legata ai film che si stanno cercando
+ * Restituisce un oggetto con la risposta della chiamata API che contiene l'array dei risultati
+ * 
+ * @param query una stringa che corrisponde all'input dell'utente
+ * 
+ * @return l'oggetto risultante dalla chiamata API
  */
 
-export const getSearchedPerson = async (personToSearch) => {
-    const response = await fetch(BASE_URL + `search/person?query=${personToSearch}`, OPTIONS);
+export const getSearchMovies = async (query) => {
+    const response = await fetch(SEARCH_URL + query, OPTIONS);
 
     const data = await response.json();
 
